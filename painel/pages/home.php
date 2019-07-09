@@ -7,7 +7,7 @@
     toogleActive();
 </script>
 <?php $_SESSION["page"] = "Home" ?>
-
+<div id="main_body">
 <!-- Inicio do BODY -->
 <div class="row" matchHeight="card">
     <div class="col-xl-3 col-lg-6 col-12">
@@ -111,3 +111,4 @@
     </div>
 </div>
 <!-- Fim do BODY -->
+    <div id="main_body">

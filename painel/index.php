@@ -48,19 +48,19 @@ $_SESSION['nm_page'] = $path_parts['basename'];
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
 </head>
-<body style="background-color: #9e9e9e">
+<body style="background-color: #42a5f5;opacity: 0.9;">
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 <div class="wrapper nav-collapsed menu-collapsed">
     <!-- main menu-->
     <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
-    <div data-active-color="white" data-background-color="black" data-image="app-assets/img/sidebar-bg/07.jpg"
+    <div data-active-color="white" data-background-color="blue" data-image="app-assets/img/sidebar-bg/07.jpg"
          class="app-sidebar">
         <!-- main menu header-->
         <!-- Sidebar Header starts-->
-        <div class="sidebar-header">
-            <div class="logo clearfix"><a href="index.php" class="logo-text float-left">
-                    <div class="logo-img"><img src="app-assets/img/logo.png"/></div>
-                    <span class="text align-middle">Axis BI.</span></a>
+        <div class="sidebar-header text-center">
+            <div class="logo clearfix img-center"><a href="index.php" class="logo-text float-left">
+                    <div class="logo-img"><img src="app-assets/img/<?php echo $_SESSION['empresa_usr']; ?>_logo.png" height="40px" width="40px"/></div>
+                    <span class="text align-middle"><?php echo $_SESSION['empresa_usr'];?></span></a>
             </div>
         </div>
         <!-- Sidebar Header Ends-->
@@ -73,11 +73,25 @@ $_SESSION['nm_page'] = $path_parts['basename'];
                     <li id="nav_home"><a href="index.php" id="nav_home"><i class="ft-home" id="nav_home"></i><span
                                     data-i18n="" class="menu-title" id="nav_home">Home</span></a>
                     </li>
-                    <!-- PDF -->
-                    <li class="has-sub nav-item"><a href="#"><i class="ft-file"></i><span data-i18n=""
-                                                                                          class="menu-title">Estáticos</span></a>
+                    <!-- PDF 2017-->
+                    <li class="has-sub nav-item" id="top_staticos"><a href="#"><i class="ft-file"></i><span data-i18n=""
+                                                                                                                                              class="menu-title">Estáticos</span></a>
                         <ul class="menu-content">
-                            <li class=" nav-item" id="nav_pdf_2019">
+                            <li class=" nav-item" id="nav_pdf_2017" <?php if(!$_SESSION['e_2017']){ echo 'hidden'; } ?>>
+                                <?php
+                                echo '<a id="nav_pdf_2017" href="./index.php?page=estaticos/2017/' . strtolower($_SESSION['empresa_usr']) . '">';
+                                ?>
+                                <i id="nav_pdf_2017"></i><span id="nav_pdf_2017" data-i18n=""
+                                                               class="menu-title">2017</span></a>
+                            </li>
+                            <li class=" nav-item" id="nav_pdf_2018" <?php if(!$_SESSION['e_2018']){ echo 'hidden'; } ?>>
+                                <?php
+                                echo '<a id="nav_pdf_2018" href="./index.php?page=estaticos/2018/' . strtolower($_SESSION['empresa_usr']) . '">';
+                                ?>
+                                <i id="nav_pdf_2018"></i><span id="nav_pdf_2018" data-i18n=""
+                                                               class="menu-title">2018</span></a>
+                            </li>
+                            <li class=" nav-item" id="nav_pdf_2019" <?php if(!$_SESSION['e_2019']){ echo 'hidden'; } ?>>
                                 <?php
                                 echo '<a id="nav_pdf_2019" href="./index.php?page=estaticos/2019/' . strtolower($_SESSION['empresa_usr']) . '">';
                                 ?>
@@ -86,6 +100,11 @@ $_SESSION['nm_page'] = $path_parts['basename'];
                             </li>
                         </ul>
                     </li>
+
+
+
+
+
                     <li class=" nav-item" id="nav_chart">
                         <?php
                         echo '<a id="nav_chart" href="./index.php?page=charts/' . strtolower($_SESSION['empresa_usr']) . '">';
@@ -166,9 +185,9 @@ $_SESSION['nm_page'] = $path_parts['basename'];
 
         <!-- Navbar (Header) Starts-->
         <nav class="navbar navbar-expand-lg navbar-light sticky-top"
-             style="background-color: #9e9e9e; border-bottom: 2px solid #707070;">
+             style="background-color: #42a5f5; border-bottom: 2px solid #0077c2;">
             <div class="container-fluid">
-                <div class="navbar-header" id="header_page"></div>
+                <div class="navbar-header" id="header_page" style="color: white"></div>
                 <div class="navbar-header">
                     <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span
                                 class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
@@ -177,7 +196,7 @@ $_SESSION['nm_page'] = $path_parts['basename'];
                 <div class="navbar-container">
                     <div id="navbarSupportedContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav">
-                            <li class="nav-item mr-2"><a id="navbar-fullscreen" href="javascript:"
+                            <li class="nav-item mr-2"><a id="navbar-fullscreen" onclick="openFullscreen('main_body');"
                                                          class="nav-link apptogglefullscreen"><i
                                             class="ft-maximize font-medium-3 blue-grey darken-4"></i>
                                     <p class="d-none">fullscreen</p></a></li>
@@ -241,7 +260,7 @@ $_SESSION['nm_page'] = $path_parts['basename'];
         <!-- Navbar (Header) Ends-->
 
         <!-- Inicio do BODY -->
-        <div class="main-content" style="background-color: #FFFFFF;" id="divContent">
+        <div class="main-content" style="background-color: #FFFFFF;" id="divContent" allowFullScreen="true" >
             <div class="content-wrapper">
                 <?php
                 try {
@@ -252,16 +271,22 @@ $_SESSION['nm_page'] = $path_parts['basename'];
                 ?>
             </div>
         </div>
-        <!-- Fim do BODY -->
-        <!-- Inicio do Rodapé -->
-        <footer class="footer footer-static" style="background-color: #9e9e9e; border-top: 2px solid #707070;">
-            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright  &copy; 2019 <a
-                            href="https://www.axisbi.com.br" id="pixinventLink" target="_blank"
-                            class="text-bold-800 primary darken-2">Axis Analytics</a>, All rights reserved. </span></p>
-        </footer>
-        <!-- Fim do Rodapé -->
     </div>
 </div>
+</body>
+        <!-- Fim do BODY -->
+        <!-- Inicio do Rodapé -->
+<!--
+<footer class="footer footer-static" style="background-color: white; border-top: 2px solid #0077c2;">
+    <div>
+    <p class="clearfix text-muted text-sm-center px-2"><span>Copyright  &copy; 2019 <a
+                    href="https://www.axisbi.com.br" id="pixinventLink" target="_blank"
+                    class="text-bold-800 primary darken-2">Axis Analytics</a>, All rights reserved. </span></p>
+    </div>
+</footer>
+-->
+<!-- Fim do Rodapé -->
+
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 <!-- START Notification Sidebar-->
@@ -276,7 +301,6 @@ $_SESSION['nm_page'] = $path_parts['basename'];
 <script src="app-assets/vendors/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 <script src="app-assets/vendors/js/prism.min.js" type="text/javascript"></script>
 <script src="app-assets/vendors/js/jquery.matchHeight-min.js" type="text/javascript"></script>
-<script src="app-assets/vendors/js/screenfull.min.js" type="text/javascript"></script>
 <script src="app-assets/vendors/js/pace/pace.min.js" type="text/javascript"></script>
 <!-- BEGIN VENDOR JS-->
 <!-- BEGIN PAGE VENDOR JS-->
@@ -294,5 +318,4 @@ $_SESSION['nm_page'] = $path_parts['basename'];
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <!-- main js-->
 <script src="app-assets/js/main.js" type="text/javascript"></script>
-</body>
 </html>

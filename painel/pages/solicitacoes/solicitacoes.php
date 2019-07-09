@@ -7,6 +7,7 @@
     toogleActive();
 </script>
 <br>
+<div id="main_body">
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -287,36 +288,5 @@
     }
 </style>
 
-<script>
-    function aguardando() {
-        document.getElementById("aguardando").classList.add("active");
-        document.getElementById("atendimento").classList.remove("active");
-        document.getElementById("encerrado").classList.remove("active");
-        document.getElementById("tb_aguardando").style.display = "block";
-        document.getElementById("tb_atendimento").style.display = "none";
-        document.getElementById("tb_encerrado").style.display = "none";
-    }
-
-    function atendimento() {
-        document.getElementById("aguardando").classList.remove("active");
-        document.getElementById("atendimento").classList.add("active");
-        document.getElementById("encerrado").classList.remove("active");
-        document.getElementById("tb_aguardando").style.display = "none";
-        document.getElementById("tb_atendimento").style.display = "block";
-        document.getElementById("tb_encerrado").style.display = "none";
-    }
-
-    function encerrado() {
-        document.getElementById("aguardando").classList.remove("active");
-        document.getElementById("atendimento").classList.remove("active");
-        document.getElementById("encerrado").classList.add("active");
-        document.getElementById("tb_aguardando").style.display = "none";
-        document.getElementById("tb_atendimento").style.display = "none";
-        document.getElementById("tb_encerrado").style.display = "block";
-    }
-
-
-</script>
-
 </body>
-</html>
+</html></div>

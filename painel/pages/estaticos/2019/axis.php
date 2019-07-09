@@ -13,7 +13,7 @@ include('app-assets/functions/restrito.php')
 </script>
 
 <br>
-
+<div id="main_body">
 <div class="accordion" id="estatico_2019">
     <div id="headingOne">
         <h2 class="mb-0">
@@ -61,4 +61,5 @@ include('app-assets/functions/restrito.php')
             ?>
         </div>
     </div>
+</div>
 </div>

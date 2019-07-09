@@ -6,6 +6,7 @@
 
     toogleActive();
 </script>
+<div id="main_body">
 <section id="ordering">
     <div class="row">
         <div class="col-12">
@@ -51,3 +52,4 @@
         </div>
     </div>
 </section>
+</div>
