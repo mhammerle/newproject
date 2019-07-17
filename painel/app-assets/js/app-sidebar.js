@@ -77,6 +77,7 @@ $(document).ready(function () {
 
     }
 
+    /*
     function expand($listItem, callback) {
         var $subList = $listItem.children('ul');
         var $children = $subList.children('li').addClass('is-hidden');
@@ -90,6 +91,8 @@ $(document).ready(function () {
                 callback();
             }
         });
+
+     */
 
 
         setTimeout(function () {

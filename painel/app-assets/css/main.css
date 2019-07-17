@@ -1,0 +1,280 @@
+/* Chrome, Safari and Opera syntax */
+:-webkit-full-screen {
+    background-color: white;
+    margin: 20px;
+    padding: 10%;
+}
+
+/* Firefox syntax */
+:-moz-full-screen {
+    background-color: white;
+    margin: 20px;
+    padding: 10%;
+}
+
+/* IE/Edge syntax */
+:-ms-fullscreen {
+    background-color: white;
+    margin: 20px;
+    padding: 10%;
+}
+
+/* Standard syntax */
+:fullscreen {
+    background-color: white;
+    margin: 20px;
+    padding: 10%;
+}
+
+
+.bodytag {
+    /*height: 100%;*/
+}
+
+
+#div2, #divespveic,#divespmanut,#divespmult,#divesploc {
+    width: 90%;
+    height: auto;
+    min-height: 200px;
+    margin: 0 auto;
+    cursor: pointer;
+
+}
+
+#div2{
+    border: 2px solid dodgerblue;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tag_veiculograma:hover, .tag_multas:hover,.tag_locacao:hover,.tag_manutencao:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    background-color: green;
+    color: white;
+}
+
+#div3 {
+    height: 600px;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0px solid;
+    border-radius: 5px;
+    display: none;
+    overflow: auto;
+}
+
+#btnExtrair{
+    width: 80%;
+    height: 60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: forestgreen;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    margin: 10%;
+
+}
+
+#btnLimpar{
+    width: 80%;
+    height: 60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    margin: 10%;
+
+}
+
+#templates_v{
+    width: 80%;
+    height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    margin: 10%;
+
+}
+
+#btnRecovery{
+    width: 80%;
+    height: 60px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    margin: 10%;
+
+}
+
+.div2footer:hover, .div1footer:hover, #templates_v:hover, .div3footer:hover {
+    width: 80%;
+    height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    margin: 10%;
+    border-color: gray;
+}
+
+.gridsbtn {
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+#mods {
+    margin: 0 auto;
+    width: auto;
+    max-width: 600px;
+    height: auto;
+}
+
+#query {
+    display: none;
+    float: left;
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#query_dual {
+    display: none;
+    float: left;
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#querySQL {
+    display: none;
+    float: left;
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#name_xls {
+    display: none;
+    float: left;
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#divButttons {
+    width: 45%;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 10px;
+    display: none;
+}
+
+#divButttons .btn {
+    margin: 5px;
+}
+
+#div2 .btn {
+    margin: 5px;
+}
+
+#div_manutencao .btn {
+    margin: 5px;
+}
+
+#div_locacao .btn {
+    margin: 5px;
+}
+
+#div_multas .btn {
+    margin: 5px;
+}
+
+#div_veiculograma .btn {
+    margin: 5px;
+}
+
+.inline {}
+
+
+
+#chart-container {
+    width: 50%;
+    height: 50%;
+}
+
+#btn_atualizar_graficos{
+    height: 100%;
+    width: 100%;
+    margin-top: 0%;
+    margin-botton: 0%;
+
+}
+
+.tag_veiculograma{
+    margin: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+}
+
+#div_locacao, #div_manutencao, #div_multas{
+    padding: 10px;
+    border-left: 2px solid gray;
+    display: none;
+}
+#div_veiculograma{
+    padding: 10px;
+    border-left: 2px solid gray;
+}
+#action_box{
+    padding: 10px;
+}
+#divExtrair{
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 8px;
+    height: auto;
+}
+
+#div_tags{
+    height: 100%;
+    overflow: auto;
+}
+
+#titulo_tag{
+    position: block;
+}

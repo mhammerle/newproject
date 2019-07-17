@@ -29,7 +29,7 @@
                             <?php include('app-assets/functions/controle_acesso.php');
                             ?>
                             <?php
-                            $k = $i_log;
+                            $k = $i_status_placa;
                             for ($i = 0; $i < $k; $i++) {
                                 echo "<tr>
                                         <th scope='row'>" . ($i + 1) . "</th>

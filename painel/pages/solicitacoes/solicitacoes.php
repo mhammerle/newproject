@@ -1,4 +1,4 @@
-<script>
+﻿<script>
     function toogleActive() {
         document.getElementById("nav_solicitacoes").classList.add("active");
         document.getElementById("header_page").innerHTML = "<h3>Solicitações</h3>";
@@ -90,7 +90,7 @@
                             <div class="card-body">
                                 <div class="px-3">
                                     <form class="form form-horizontal form-bordered"
-                                          action="app-assets/php/abrir_solicitacao.php" method="post">
+                                          action="app-assets/functions/abrir_solicitacao.php" method="post">
                                         <div class="form-body">
                                             <h4 class="form-section"><i class="ft-info"></i> Dados Pessoais</h4>
                                             <div class="row">

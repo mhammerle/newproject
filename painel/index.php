@@ -42,6 +42,7 @@ $_SESSION['nm_page'] = $path_parts['basename'];
     <!-- END VENDOR CSS-->
     <!-- BEGIN APEX CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/main.css">
     <!-- END APEX CSS-->
     <!-- BEGIN Page Level CSS-->
     <!-- END Page Level CSS-->
@@ -295,7 +296,8 @@ $_SESSION['nm_page'] = $path_parts['basename'];
 
 <!-- Theme customizer Ends-->
 <!-- BEGIN VENDOR JS-->
-<script src="app-assets/vendors/js/core/jquery-3.2.1.min.js" type="text/javascript"></script>
+<!--<script src="app-assets/vendors/js/core/jquery-3.2.1.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="app-assets/js/jquery.min.js"></script>
 <script src="app-assets/vendors/js/core/popper.min.js" type="text/javascript"></script>
 <script src="app-assets/vendors/js/core/bootstrap.min.js" type="text/javascript"></script>
 <script src="app-assets/vendors/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
@@ -304,18 +306,22 @@ $_SESSION['nm_page'] = $path_parts['basename'];
 <script src="app-assets/vendors/js/pace/pace.min.js" type="text/javascript"></script>
 <!-- BEGIN VENDOR JS-->
 <!-- BEGIN PAGE VENDOR JS-->
-<script src="app-assets/vendors/js/chartist.min.js" type="text/javascript"></script>
+<!--<script src="app-assets/vendors/js/chartist.min.js" type="text/javascript"></script>-->
 <!-- END PAGE VENDOR JS-->
 <!-- BEGIN APEX JS-->
 <script src="app-assets/js/app-sidebar.js" type="text/javascript"></script>
 <script src="app-assets/js/notification-sidebar.js" type="text/javascript"></script>
 <script src="app-assets/js/customizer.js" type="text/javascript"></script>
 <!-- END APEX JS-->
-<!-- BEGIN PAGE LEVEL JS-->
-<script src="app-assets/js/dashboard1.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
-<!-- Google Charts -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <!-- main js-->
 <script src="app-assets/js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="app-assets/js/Chart.min.js"></script>
+
+
+
+
+
+
 </html>

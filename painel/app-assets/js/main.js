@@ -54,86 +54,55 @@ function drop(ev) {
 }
 
 function selectType(type) {
-    document.getElementById("main_body").style.height = "800px";
-
     var from_btn = document.getElementById("from");
     document.getElementById("select").innerHTML = "";
     document.getElementById("select_dual").innerHTML = "";
-    document.getElementById("div3").innerHTML = "<h1>Extrator</h1>" +
-        "" +
-        "<hr>Itens que serão incluidos no relatório<br><br>" +
-        "<div id='div2' ondrop='drop(event)' ondragover='allowDrop(event)'></div><br>" +
-        "<div class='gridsbtn'>"+
-        "<div class='div1footer btn' onclick='window.location.reload();'><h6> LIMPAR </h6><a href'#'><i class='fas fa-times'></i></a></div>" +
-        "<button class='div2footer btn' type='submit'><h6> DOWNLOAD </h6><a href'#'><i class='fas fa-download'></i></a></button>" +
-        "</div>";
-
-
-    //document.getElementById("div2").innerHTML = "<span><h1>Extrator</h1><hr>Itens que serão incluidos no relatório</span><br><br><div class='div1footer'><h6> LIMPAR </h6><a href'#'><i class='fas fa-download'></i></a></div><div class='div2footer'><h6> DOWNLOAD </h6><a href'#'><i class='fas fa-download'></i></a></div> </span>";
 
     if (type === 'multas') {
         from_btn.innerHTML = " from MULTAS";
-        document.getElementById("divButttons").style.display = "block";
-        document.getElementById("div3").style.display = "block";
         document.getElementById("div_multas").style.display = "block";
         document.getElementById("div_manutencao").style.display = "none";
         document.getElementById("div_locacao").style.display = "none";
         document.getElementById("div_veiculograma").style.display = "none";
         document.getElementById("querySQL").value = document.getElementById("query_dual").innerText + " " + document.getElementById("query").innerText;
         document.getElementById("name_xls").value = 'multas';
-        document.getElementById("dropdownMenuButtonModulo").innerText = 'Multas';
     } else if (type === 'manutencao') {
         from_btn.innerHTML = " from MANUTENCAO";
-        document.getElementById("divButttons").style.display = "block";
-        document.getElementById("div3").style.display = "block";
         document.getElementById("div_multas").style.display = "none";
         document.getElementById("div_manutencao").style.display = "block";
         document.getElementById("div_locacao").style.display = "none";
         document.getElementById("div_veiculograma").style.display = "none";
         document.getElementById("querySQL").value = document.getElementById("query_dual").innerText + " " + document.getElementById("query").innerText;
         document.getElementById("name_xls").value = 'manutencao';
-        document.getElementById("dropdownMenuButtonModulo").innerText = 'Manutenção';
 
     } else if (type === 'locacao') {
         from_btn.innerHTML = " from LOCACAO";
-        document.getElementById("divButttons").style.display = "block";
-        document.getElementById("div3").style.display = "block";
         document.getElementById("div_multas").style.display = "none";
         document.getElementById("div_manutencao").style.display = "none";
         document.getElementById("div_locacao").style.display = "block";
         document.getElementById("div_veiculograma").style.display = "none";
         document.getElementById("querySQL").value = document.getElementById("query_dual").innerText + " " + document.getElementById("query").innerText;
         document.getElementById("name_xls").value = 'locacao';
-        document.getElementById("dropdownMenuButtonModulo").innerText = 'Locação';
 
     } else if (type === 'veiculograma') {
         from_btn.innerHTML = " from VEICULOGRAMA";
-        document.getElementById("divButttons").style.display = "block";
-        document.getElementById("div3").style.display = "block";
         document.getElementById("div_multas").style.display = "none";
         document.getElementById("div_manutencao").style.display = "none";
         document.getElementById("div_locacao").style.display = "none";
         document.getElementById("div_veiculograma").style.display = "block";
         document.getElementById("querySQL").value = document.getElementById("query_dual").innerText + " " + document.getElementById("query").innerText;
         document.getElementById("name_xls").value = 'veiculograma';
-        document.getElementById("dropdownMenuButtonModulo").innerText = 'Veiculograma';
 
     }
 }
 
 function filtrar_tags(tbox,divs, tags) {
-    var procurado = "";
-    var divName = "";
-    var className = "";
-    var classnameCount = "";
-    var idBtn = "";
-    var j = 0;
-    procurado = document.getElementById(tbox).value.toUpperCase();
-    divName = document.getElementById(divs);
-    className = divName.getElementsByClassName(tags);
-    classnameCount = className.length;
-    for (j = 0; j < classnameCount; j++) {
-        idBtn = className[j].id.toUpperCase();
+    var procurado = document.getElementById(tbox).value.toUpperCase();
+    var divName = document.getElementById(divs);
+    var className = divName.getElementsByClassName(tags);
+    var classnameCount = className.length;
+    for (var j = 0; j < classnameCount; j++) {
+        var idBtn = className[j].id.toUpperCase();
         if (idBtn.includes(procurado)) {
             document.getElementById(idBtn).style.display = "inline";
         } else {
@@ -142,9 +111,6 @@ function filtrar_tags(tbox,divs, tags) {
     }
 }
 
-
-/* When the openFullscreen() function is executed, open the video in fullscreen.
-Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
 function openFullscreen(id) {
     var elem = document.getElementById(id);
     if (elem.requestFullscreen) {
@@ -188,3 +154,15 @@ function encerrado() {
 function toogleMonth(mes,ano){
     document.getElementById('pdf_frame').src = 'pages/estaticos/'+ano+'/pdfs/21201_Relatorio_AVON_'+ano+'-'+mes+'.pdf';
 }
+
+function activeBtn(btnID){
+    if(document.getElementById(btnID).classList.contains("btn-secundary")){
+        document.getElementById(btnID).classList.remove("btn-secundary");
+        document.getElementById(btnID).classList.add("btn-success");
+    } else if(document.getElementById(btnID).classList.contains("btn-success")){
+        document.getElementById(btnID).classList.remove("btn-success");
+        document.getElementById(btnID).classList.add("btn-secundary");
+    }
+    
+}
+
